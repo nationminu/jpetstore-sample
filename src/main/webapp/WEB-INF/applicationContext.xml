@@ -36,21 +36,20 @@
     </jdbc:embedded-database>
     -->
 
-
 	<!--  jndi lookup  -->
+    <!--
 	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
 	    <property name="jndiName" value="#{systemProperties['DB_JNDI']}"/>
 	</bean>
+    -->
 
 	<!-- dbcp2 connection pool -->
-	<!--
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="#{systemProperties['DB_CLASS']}"/>
         <property name="url" value="#{systemProperties['DB_URL']}" />
         <property name="username" value="#{systemProperties['DB_USERNAME']}"/>
         <property name="password" value="#{systemProperties['DB_PASSWORD']}"/>
     </bean>
- 	-->
 
     <!-- transaction manager, use DataSourceTransactionManager" for JDBC local tx -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

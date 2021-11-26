@@ -17,5 +17,5 @@
 
 -->
 <jboss-web>
-<context-root>jpetstore</context-root>
+<context-root>/jpetstore</context-root>
 </jboss-web>

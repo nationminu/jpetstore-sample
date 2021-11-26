@@ -39,7 +39,7 @@
 
 	<!--  jndi lookup  -->
 	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
-	    <property name="jndiName" value="#{systemProperties['DB_JNDI']}"/>
+	    <property name="jndiName" value="#{systemProperties['DB_JNDI'] ?: 'java:comp/env/jdbc/mydb'}"/>
 	</bean>
 
 	<!-- dbcp2 connection pool -->
